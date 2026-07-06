@@ -1,0 +1,66 @@
+PARTE 1: PESQUISA TEÓRICA
+Qual a função do modificador de acesso privado (o uso do underscore "_" antes do nome da variável) no Dart?
+No Dart, o underscore (`_`) não é apenas uma convenção visual; ele é uma **regra de visibilidade**. Quando você inicia o nome de uma variável, função ou classe com `_`, você está tornando esse membro **privado ao nível de biblioteca (arquivo)**. Isso significa que ele só pode ser acessado por códigos que residam dentro do mesmo arquivo `.dart`.
+
+
+Explique com suas palavras a diferença prática entre acessar uma variável diretamente e acessá-la através de um Getter.
+Acesso Direto: Você lê o valor "nu e cru". Se você mudar a lógica de como esse dado é armazenado no futuro, terá que quebrar o código de todo mundo que o utiliza.
+Getter: Funciona como uma interface. Na prática, você chama o que parece ser uma variável, mas por trás há uma função. Isso permite que você **intercepte a leitura** para formatar um dado, realizar um cálculo de última hora ou simplesmente proteger a variável original de alterações externas.
+
+
+Qual é a principal responsabilidade de um Setter dentro do conceito de Encapsulamento?
+A principal missão do **Setter** é a **Validação e Controle**. Ele garante que o objeto nunca entre em um estado inválido. 
+Exemplo: Se você tem um atributo `idade`, o Setter pode impedir que alguém atribua um valor negativo como `-5`. Ele age como um "segurança" na porta da variável.
+
+
+O que acontece no código se tentarmos acessar um atributo privado de uma classe estando em um arquivo diferente de onde ela foi declarada?
+Se você tentar acessar `objeto._variavelPrivada` de um arquivo externo, o compilador do Dart gerará um erro de compilação. Para o Dart, aquele atributo simplesmente "não existe" fora do arquivo de origem.
+
+
+Explique o motivo pelo qual o Dart não permite instanciar diretamente uma classe abstrata (ex: var c = Conteudo();).
+Uma classe abstrata é como um projeto incompleto ou um conceito geral. 
+> Imagine que eu te peça: "Desenhe um Animal". Você provavelmente perguntará: "Que animal? Um gato ou um cão?". 
+O Dart proíbe a instância `var c = Conteudo();` porque a classe abstrata serve apenas como um molde (contrato) para que outras classes herdem suas características. Ela pode conter métodos sem corpo (sem implementação) que a máquina não saberia como executar.
+
+
+
+O que faz a anotação @override e em quais situações seu uso é obrigatório?
+### 6. A Anotação `@override`
+Ela sinaliza que você está **sobrescrevendo** um comportamento que veio da classe pai. 
+Melhora a leitura e ajuda o compilador a te avisar se você cometer um erro de digitação no nome do método.
+Obrigatoriedade: No Dart moderno, o uso é altamente recomendado para clareza, mas é tecnicamente obrigatório quando você está implementando métodos de uma Interface ou **Classe Abstrata** que não possuem implementação prévia.
+
+
+
+Qual a utilidade da função jsonDecode da biblioteca dart:convert quando estamos lidando com leitura de arquivos36?
+Arquivos JSON são lidos inicialmente como grandes cadeias de texto (`String`). A função `jsonDecode` transforma esse texto em estruturas de dados que o Dart entende, geralmente um **Map<String, dynamic>** ou uma **List**. Sem ela, você não conseguiria acessar os valores pelas chaves (ex: `mapa['nome']`).
+
+
+
+
+PARTE 4: RELATÓRIO FINAL
+Responda com base no que você observou executando o código:
+O que foi impresso no console quando o seu programa tentou passar a classificação "-5" (vinda do JSON) para o objeto?
+Erro capturado: Exception: Classificação inválida
+
+Como o uso do Encapsulamento neste exercício garantiu a segurança e a integridade dos dados do seu sistema?
+Anulou a possibilidade de encontrar problemas.
+
+
+Se o arquivo "dados.json" estivesse completamente em branco no momento da leitura, qual seria o comportamento da função jsonDecode?
+Lança uma exceção FormatException com uma mensagem semelhante a Unexpected end of JSON input.
+
+
+Qual a principal vantagem de definir o método darPlay() na classe pai de forma abstrata, em vez de criar métodos independentes apenas nas classes filhas?
+A principal vantagem é que criamos o metodo darPlay() uma só vez, ao invés de criar uma em cada classe filha.
+
+
+Qual foi a maior dificuldade encontrada durante a realização desta atividade?
+A parte 3 inteira.
+
+
+
+
+
+
+
