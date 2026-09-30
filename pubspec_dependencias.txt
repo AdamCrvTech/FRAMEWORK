@@ -1,0 +1,8 @@
+Rode no terminal, dentro do projeto:
+
+flutter create the_bear
+cd the_bear
+flutter pub add provider sqflite path
+
+Depois substitua a pasta lib/ pela pasta lib/ deste projeto.
+Rode em emulador Android/iOS (sqflite nao funciona no navegador).

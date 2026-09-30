@@ -1,0 +1,11 @@
+name: atividade2_achados
+description: Central de Achados e Perdidos - atividade de revisão Flutter
+publish_to: 'none'
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  device_preview: ^1.2.0
+flutter:
+  uses-material-design: true

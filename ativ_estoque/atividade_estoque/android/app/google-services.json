@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "941543842430",
+    "project_id": "flutterqueijo",
+    "storage_bucket": "flutterqueijo.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941543842430:android:10bfeb988d596a20196e2f",
+        "android_client_info": {
+          "package_name": "com.example.atividade_estoque"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPCjqerWp8-JIVdpD21K6kCOtCE6OXpc4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
