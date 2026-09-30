@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Miscellaneous
 *.class
 *.log
@@ -43,3 +44,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+=======
+ATIVIDADE 3 FLUTTER/Atv_cards_flutter/
+>>>>>>> 3330684ab1f65ae4ef94678e1cd008ca5dfe7813

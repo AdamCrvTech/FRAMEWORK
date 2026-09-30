@@ -1,0 +1,22 @@
+Imagine que você está criando um sistema para uma concessionária. Você cria a classe Veiculo como abstrata. Por que não faz sentido o sistema permitir que o vendedor cadastre um "Veículo" genérico, mas faz sentido ele cadastrar um "Carro" ou uma "Moto"? O que a classe abstrata representa nesse mundo real?
+Você não compra um "Veículo", você compra um Uno ou uma Biz. A classe abstrata é o molde. O vendedor não cadastra o molde, ele cadastra o produto real (Carro/Moto) que herdou as peças desse molde.
+
+
+Se a classe Pagamento tem o atributo valor, e a classe Pix herda de Pagamento, por que é errado o aluno criar a variável double valor de novo dentro da classe Pix? O que acontece com a "ponte" entre pai e filho se ele fizer isso?
+Se você cria valor de novo no Filho, você cria uma parede. O Filho para de usar a gaveta de dinheiro do Pai e cria uma gaveta própria com o mesmo nome. Resultado: o Pai tenta processar o pagamento, olha na gaveta dele (que está vazia) e o sistema quebra.
+
+
+
+Explique para um leigo: Para que serve o comando super(valor) dentro de um construtor? Se o dado já chegou no "Filho" vindo do teclado (stdin), por que eu tenho que "empurrar" ele para o "Pai"?
+O dado chega no Filho, mas o "Dono" da regra de como guardar esse dado é o Pai. O super é você dizendo: "Toma, Pai, esse dado é seu, guarda aí do seu jeito que eu cuido do resto".
+
+
+
+Quando você cria um método abstrato (ex: void processar();) na classe pai, você não escreve código nenhum dentro dele. Qual é a utilidade de criar um método "vazio" que obriga os filhos a escreverem suas próprias versões? O que o programador ganha com essa "obrigação"?
+É uma promessa obrigatória. O Pai diz: "Todo mundo aqui tem que processar, mas cada um faz do seu jeito". O programador ganha segurança: ele pode mandar processar uma lista de 100 pagamentos diferentes com um único comando, sabendo que nenhum deles vai esquecer de funcionar.
+
+
+
+
+No exercício do Delivery, nós chamamos o método calcularFrete() tanto para o Sedex quanto para a Entrega Comum. O comando escrito no código é exatamente o mesmo. Como o computador sabe que em um ele deve somar 10 reais e no outro deve somar 50? Quem avisa ele?
+A "etiqueta" do objeto. Quando você deu new Sedex(), o computador colou uma etiqueta na memória. Na hora de calcular o frete, ele não lê o nome do método, ele olha a etiqueta. Se a etiqueta diz "Sedex", ele executa a lógica de 50 reais automaticamente.
